@@ -14,17 +14,22 @@ enable_ufw_port() {
     fi
 }
 
+# Function to disable UFW port rule for all interfaces or a specific interface
 disable_ufw_port() {
     local protocol=$1
     local port=$2
     local interface=$3
+
+    # If interface is empty, disable rule for all interfaces
     if [ -z "$interface" ]; then
-        echo "Removing $protocol port $port rule in UFW for all interfaces..."
-        sudo ufw delete allow $protocol from any to any port $port
+        echo "Disabling $protocol port $port rule in UFW for all interfaces..."
+        sudo ufw deny $protocol from any to any port $port
     else
-        echo "Removing $protocol port $port rule in UFW for interface $interface..."
-        sudo ufw delete allow in on $interface to any port $port proto $protocol
+        # If interface is specified, disable rule for that interface
+        echo "Disabling $protocol port $port rule in UFW for interface $interface..."
+        sudo ufw deny $protocol from any to any port $port proto $protocol on $interface
     fi
+
     # List the active UFW rules to confirm the changes
     sudo ufw status verbose
 }
