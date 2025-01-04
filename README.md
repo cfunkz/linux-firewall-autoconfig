@@ -12,7 +12,7 @@ Additionally, this script offers the functionality to specify **interfaces** (e.
 
 ## What this does
 
-- **firewalld**:
+- **firewalld and UFW**:
   - Enable or disable ports with interface restrictions.
   - List active firewalld rules.
   - Enable or disable firewalld.
