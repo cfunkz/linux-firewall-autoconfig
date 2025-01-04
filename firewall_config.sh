@@ -14,29 +14,31 @@ enable_ufw_port() {
     fi
 }
 
-# Function to disable UFW port rule for all interfaces or a specific interface
+# Function to disable (remove) UFW port rule for a specific interface
 disable_ufw_port() {
     local protocol=$1
     local port=$2
     local interface=$3
 
-    # If interface is empty, disable rule for all interfaces
-    if [ -z "$interface" ]; then
-        echo "Disabling $protocol port $port rule in UFW for all interfaces..."
-        sudo ufw deny $protocol from any to any port $port
-    else
-        # If interface is specified, disable rule for that interface
-        echo "Disabling $protocol port $port rule in UFW for interface $interface..."
-        sudo ufw deny $protocol from any to any port $port proto $protocol on $interface
-    fi
+    # List all rules and show them with numbered indices
+    echo "Listing current UFW rules..."
+    sudo ufw status numbered
 
-    # Reload UFW to apply the changes and ensure the rule disappears from the list
+    # Prompt user for the rule index to delete
+    read -p "Enter the rule number to delete (from the listed rules): " rule_index
+
+    # Delete the rule by index
+    echo "Removing rule number $rule_index..."
+    sudo ufw delete $rule_index
+
+    # Reload UFW to apply changes
     echo "Reloading UFW..."
     sudo ufw reload
 
-    # List the active UFW rules to confirm the changes
+    # List the active UFW rules to confirm the change
     sudo ufw status verbose
 }
+
 
 
 # Function to enable port for firewalld with interface restrictions
