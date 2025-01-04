@@ -30,6 +30,10 @@ disable_ufw_port() {
         sudo ufw deny $protocol from any to any port $port proto $protocol on $interface
     fi
 
+    # Reload UFW to apply the changes and ensure the rule disappears from the list
+    echo "Reloading UFW..."
+    sudo ufw reload
+
     # List the active UFW rules to confirm the changes
     sudo ufw status verbose
 }
