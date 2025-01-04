@@ -20,7 +20,7 @@ Additionally, this script offers the functionality to specify **interfaces** (e.
 
 ## What need
 
-- **firewalld** installed and configured on your system.
+- **firewalld or UFW** installed and configured on your system.
 - `sudo` privileges to modify firewall settings.
 
 ## What do
