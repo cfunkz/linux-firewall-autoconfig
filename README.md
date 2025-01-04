@@ -6,7 +6,7 @@
 
 
 
-This script is designed to help configure and manage firewalls on a Linux system, using two firewall management tool: **firewalld(Firewall-CMD)**. It allows you to open and close ports, enable or disable the firewall, list active rules, and show the status of the firewalls.
+This script is designed to help configure and manage firewalls on a Linux system, using two firewall management tool: **firewalld(Firewall-CMD) and UFW(Uncomplicated Firewall)**. It allows you to open and close ports, enable or disable the firewall, list active rules, and show the status of the firewalls.
 
 Additionally, this script offers the functionality to specify **interfaces** (e.g., eth0, enp1s0) when enabling or disabling ports, allowing more control over the firewall rules especially if you're a newbie.
 
