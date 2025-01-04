@@ -21,18 +21,19 @@ disable_ufw_port() {
     local interface=$3
     if [ -z "$interface" ]; then
         echo "Disabling $protocol port $port in UFW for all interfaces..."
-        # Remove the rule before adding it
+        # Remove the allow rule before applying deny
         sudo ufw delete allow $protocol $port
         sudo ufw deny $protocol $port
     else
         echo "Disabling $protocol port $port in UFW for interface $interface..."
-        # Remove the rule before adding it
+        # Remove the allow rule before applying deny
         sudo ufw delete allow in on $interface to any port $port proto $protocol
         sudo ufw deny in on $interface to any port $port proto $protocol
     fi
     # List the active UFW rules to confirm the changes
     sudo ufw status verbose
 }
+
 
 # Function to enable port for firewalld with interface restrictions
 enable_firewalld_port() {
