@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Function to enable port for UFW with interface restrictions
+# Function to enable port for UFW with interface
 enable_ufw_port() {
     local protocol=$1
     local port=$2
@@ -14,7 +14,7 @@ enable_ufw_port() {
     fi
 }
 
-# Function to delete UFW rules (allow/deny) for a specific port with interface restrictions
+# Function to delete UFW rules (allow/deny) for a specific port with interface
 disable_ufw_port() {
     local protocol=$1
     local port=$2
@@ -42,7 +42,7 @@ disable_ufw_port() {
 
 
 
-# Function to enable port for firewalld with interface restrictions
+# Function to enable port for firewalld with interface
 enable_firewalld_port() {
     local protocol=$1
     local port=$2
@@ -56,7 +56,7 @@ enable_firewalld_port() {
     sudo firewall-cmd --reload
 }
 
-# Function to disable port for firewalld with interface restrictions
+# Function to disable port for firewalld with interface
 disable_firewalld_port() {
     local protocol=$1
     local port=$2
