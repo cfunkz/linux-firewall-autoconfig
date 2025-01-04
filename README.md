@@ -6,17 +6,11 @@
 
 
 
-This script is designed to help configure and manage firewalls on a Linux system, using two firewall management tools: **UFW (Uncomplicated Firewall)** and **firewalld(Firewall-CMD)**. It allows you to open and close ports, enable or disable the firewall, list active rules, and show the status of the firewalls.
+This script is designed to help configure and manage firewalls on a Linux system, using two firewall management tool: **firewalld(Firewall-CMD)**. It allows you to open and close ports, enable or disable the firewall, list active rules, and show the status of the firewalls.
 
 Additionally, this script offers the functionality to specify **interfaces** (e.g., eth0, enp1s0) when enabling or disabling ports, allowing more control over the firewall rules especially if you're a newbie.
 
 ## What this does
-
-- **UFW (Uncomplicated Firewall)**:
-  - Enable or disable ports with interface restrictions.
-  - List active UFW rules.
-  - Enable or disable UFW firewall.
-  - Show the status of UFW.
 
 - **firewalld**:
   - Enable or disable ports with interface restrictions.
@@ -26,7 +20,7 @@ Additionally, this script offers the functionality to specify **interfaces** (e.
 
 ## What need
 
-- **UFW** or **firewalld** installed and configured on your system.
+- **firewalld** installed and configured on your system.
 - `sudo` privileges to modify firewall settings.
 
 ## What do
