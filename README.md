@@ -13,9 +13,9 @@ Additionally, this script offers the functionality to specify **interfaces** (e.
 
 - **firewalld and UFW**:
   - Enable or disable ports with interface restrictions.
-  - List active firewalld rules.
-  - Enable or disable firewalld.
-  - Show the status of firewalld.
+  - List active firewall rules.
+  - Enable or disable firewall.
+  - Show the status of firewall.
 
 ## What need
 
