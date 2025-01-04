@@ -30,6 +30,3 @@ Additionally, this script offers the functionality to specify **interfaces** (e.
    curl -sSL https://github.com/cfunkz/linux-firewall-autoconfig/raw/main/firewall_config.sh -o firewall_config.sh
    chmod +x firewall_config.sh
    ./firewall_config.sh
-
-
-
