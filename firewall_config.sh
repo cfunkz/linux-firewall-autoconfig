@@ -21,7 +21,7 @@ disable_ufw_port() {
     local interface=$3
     if [ -z "$interface" ]; then
         echo "Disabling $protocol port $port in UFW for all interfaces..."
-        sudo ufw deny $protocol from any to any port $port
+        sudo ufw deny $protocol $port
     else
         echo "Disabling $protocol port $port in UFW for interface $interface..."
         sudo ufw deny in on $interface to any port $port proto $protocol
